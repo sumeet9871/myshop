@@ -85,4 +85,10 @@ public String login()
 	{
 		return"signup";
 	}
+
+	@RequestMapping("/footer")
+	public String header()
+	{
+		return"footer";
+	}
 }

@@ -15,6 +15,11 @@ body{
 background-image:url("resources/img/gb1.jpg");
 background-size:100%;
 }
+#div { 
+    background-color:#fafaf2;
+	width:300px;
+	height:300px;
+  }
 </style>
 </head>
 <body>
@@ -33,8 +38,8 @@ background-size:100%;
 <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;home</a><li>
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;products<span class="caret"></span></a>
 <ul class="dropdown-menu">
-<li><a href="#">sony</a></li>
-<li><a href="#">lg</a><li>
+<li><a href="productpage">lg</a></li>
+<li><a href="#">sony</a><li>
 <li><a href="#">htc</a></li>
 <li><a href="#">samsung</a></li>
 </ul>
@@ -43,34 +48,17 @@ background-size:100%;
 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
-<li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span>SignUp</a><li>
-<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span>Login</a><li>
+<li><a href="signup"><span class="glyphicon glyphicon-user"></span>SignUp</a><li>
+<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a><li>
 </ul>
 </div>
 </div>
 </nav>
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<center>
-<h1>Welcome To My Shop</h1>
-<p class="text-info">
-<pre>
-Manage Your Orders
-Easily Track Orders, Create Returns
- 
-Make Informed Decisions
-Get Relevant Alerts And Recommendations
- 
-Engage Socially
-With Wishlists, Reviews, Ratings
-</pre>
-</p>
-</center>
-</div>
+
+ <div class="container-fluid" align="center" id="div">
 <div class="form-group">
 <form action="index.jsp">
-
+<h2 align="center">myshop</h2>
   <div class="form-group">
     <label for="email">Email address:</label>
     <input type="email" class="form-control" id="email" required>
@@ -84,6 +72,8 @@ With Wishlists, Reviews, Ratings
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
+</div>
+</div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
 <div class="container-fluid" style="color:white;">
     Copyright:MyShop Inc.<br/>

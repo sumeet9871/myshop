@@ -1,12 +1,7 @@
 <%@ page isELIgnored="false" %>
 
-<html>
-
-<head>
+<%@ include file="header.jsp" %>
  <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
-
-</head>
-<body>
 <script>
 
 var prod=${productList};
@@ -52,5 +47,4 @@ angular.module("productApp",[])
   </table>
   </div>
 </div>
-</body>
-</html>
+<%@ include file="footer.jsp" %>

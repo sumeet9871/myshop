@@ -17,7 +17,7 @@ background-size:100%;
 #div{
 background-image:url("resources/img/gb2.jpg");
 background-color:#FAF7F7;
-height:550px;
+height:500px;
 width:440px;
 
 }
@@ -39,8 +39,8 @@ width:440px;
 <li class="active"><a href="index"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;home</a><li>
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;products<span class="caret"></span></a>
 <ul class="dropdown-menu">
-<li><a href="#">sony</a></li>
-<li><a href="#">lg</a><li>
+<li><a href="productpage">lg</a></li>
+<li><a href="#">sony</a><li>
 <li><a href="#">htc</a></li>
 <li><a href="#">samsung</a></li>
 </ul>
@@ -55,45 +55,54 @@ width:440px;
 </div>
 </div>
 </nav>
-<div class="container" align="center" id="div">
-<div class="form-horizontal">
-<form action="signup.jsp">
+<div class="container"  id="div">
+<h2 align="center">myshop</h2>
+<form class="form-horizontal">
 <div class="form-group">
-<label for="name">Name:</label>
-<input type="text" class="form-control" id="name" required>
+<label  class="control-label col-sm-2" for="name">Name:</label>
+<div class="col-xs-10">
+<input type="text" class="form-control" id="name" placeholder="Enter your name">
+</div>
 </div>
 <div class="form-group">
-<label for="last-name">Last Name:</label>
-<input type="text" class="form-control" id="last-name" required>
+<label class="control-label col-sm-2" for="last-name">Last Name:</label>
+<div class="col-xs-10">
+<input type="text" class="form-control" id="last-name" placeholder="Enter your last name">
+</div>
 </div>
   <div class="form-group">
-    <label for="email">Email address:</label>
-    <input type="email" class="form-control" id="email" required>
+    <label class="control-label col-sm-2" for="email">Email address:</label>
+    <div class="col-xs-10">
+    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+  </div>
   </div>
   <div class="form-group">
-<label for="mobile number">Mobile Number:</label>
-<input type="number" class="form-control" id="last-name" required>
+<label class="control-label col-sm-2" for="mobile number">Mobile Number:</label>
+<div class="col-xs-10">
+<input type="number" class="form-control" id="last-name" placeholder="Enter mobile no">
+</div>
 </div>
 <div class="form-group">
-<label for="Address">Address:</label>
+<label  class="control-label col-sm-2"for="Address">Address:</label>
+<div class="col-xs-10">
 <input type="text" class="form-control" id="Address" required>
 </div>
-<div class="form-group">
-<label for="last-name">Date of Birth:</label>
-<input type="date" id="date-of-birth" required>
 </div>
+
   <div class="form-group">
-    <label for="pwd">Password:</label>
-    <input type="password"id="password" required>
+    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <div class="col-xs-10">
+    <input type="password" class="form-control" id="pwd" required>
   </div>
-  
+  </div>
   <div class="form-group">
-    <label for="pwd1">Confirm Password</label>
-     <input type="password"  id="password1" required>
+    <label class="control-label col-sm-2" for="pwd1">Confirm Password</label>
+    <div class="col-xs-10">
+     <input type="password" class="form-control" id="pwd1" required>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+  <button type="button"  class="btn btn-default">Submit</button>
 </form>
-</div>
 </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
 <div class="container-fluid" style="color:white;">

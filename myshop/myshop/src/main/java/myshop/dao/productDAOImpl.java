@@ -32,7 +32,7 @@ public class productDAOImpl implements productDAO
 
 	public product getProductById(int id) {
 		Session session=sessionFactory.getCurrentSession();
-		product product=(product)session.createQuery("from Product where id="+id).getSingleResult();
+		product product=(product)session.createQuery("from product where id="+id).getSingleResult();
 		return product;
 	}
 
