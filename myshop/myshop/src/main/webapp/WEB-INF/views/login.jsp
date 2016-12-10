@@ -26,7 +26,7 @@ background-size:100%;
 <nav class="navbar navbar-inverse">
 <div class="container-fluid">
 <div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-targer="#mynavbar">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
@@ -70,7 +70,7 @@ background-size:100%;
   <div class="checkbox">
     <label><input type="checkbox"> Remember me</label>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit" class="btn  btn-block btn-primary">Submit</button>
 </form>
 </div>
 </div>

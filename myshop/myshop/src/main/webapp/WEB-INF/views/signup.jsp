@@ -27,7 +27,7 @@ width:440px;
 <nav class="navbar navbar-inverse">
 <div class="container-fluid">
 <div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-targer="#mynavbar">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
@@ -101,7 +101,7 @@ width:440px;
      <input type="password" class="form-control" id="pwd1" required>
   </div>
   </div>
-  <button type="button"  class="btn btn-default">Submit</button>
+  <button type="button"  class="btn btn-block btn-primary">Submit</button>
 </form>
 </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom">

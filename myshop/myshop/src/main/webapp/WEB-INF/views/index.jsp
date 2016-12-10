@@ -17,14 +17,14 @@ background-size:100%;
   .carousel-inner > .item > a > img {
       width: 100%;
       margin: auto;
-      height:50%
+      height:25%
   } 
 </style>
 </head>
 <nav class="navbar navbar-inverse">
 <div class="container-fluid">
 <div class="navbar-header">
-<button type="button" class="navbar-toggle" data-toggle="collapse" data-targer="#mynavbar">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
@@ -48,6 +48,7 @@ background-size:100%;
 <li><a href="signup"><span class="glyphicon glyphicon-user"></span>Signup</a></li>
 <li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 </ul>
+</div>
 </div>
 </nav>
 <div class="container">
@@ -85,7 +86,25 @@ background-size:100%;
   </a>
 </div>
 </div>
+<div class="container-fluid" align="right">
+<iframe width="420" height="300" src="https://www.youtube.com/embed/z4uCgicyCK8"></iframe>
+</div>
 
+ <div class="container-fluid">
+  <table width="100%">
+  <tr>
+  <td><img src="resources/img/a.jpg" class="img-circle" alt="hi" width="150" height="100"></td>
+  <td><img src="resources/img/b.jpg" class="img-circle" alt="hi" width="150" height="100"></td>
+  <td><img src="resources/img/c.jpg" class="img-circle" alt="hi" width="150" height="100"></td>
+  <td><img src="resources/img/d.jpg" class="img-circle" alt="hi" width="150" height="100"></td>
+  </tr>
+  <tr>
+  <td><h2>Guitar</h2></td>
+  <td><h2>Bass</h2></td>
+  <td><h2>Amplifier</h2></td>
+  </tr>
+  </table>
+  </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
 <div class="container-fluid" style="color:white;">
     Copyright:MyShop Inc.<br/>
