@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" xmlns:flow="http://www.springframework.org/schema/webflow-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+
+
+<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
+
+<property value="0" name="order"/>
+
+<property name="flowRegistry" ref="flowRegistry"/>
+
+</bean>
+
+
+<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerAdapter">
+
+<property name="flowExecutor" ref="flowExecutor"/>
+
+</bean>
+
+<flow:flow-executor flow-registry="flowRegistry" id="flowExecutor"/>
+
+
+<flow:flow-registry id="flowRegistry">
+
+<flow:flow-location id="demoFlow" path="/WEB-INF/views/flows/demo-flow.xml"/>
+
+</flow:flow-registry>
+
+</beans>
