@@ -23,7 +23,6 @@ public class AdminController
 {
 	@Autowired
 	PersonDAO personDAO;
-	
 	@RequestMapping("/admin")
 	public ModelAndView adminPage()
 	{
@@ -69,11 +68,12 @@ public class AdminController
 	return "redirect:/admin";
 }
 
+
 	}
 	@RequestMapping(value="/authfailure",method=RequestMethod.GET)
 	public String accessDeniedPage()
 	{
 		return "accessDenied";
 	}
-	
 }
+

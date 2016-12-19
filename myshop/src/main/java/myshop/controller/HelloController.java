@@ -2,11 +2,19 @@ package myshop.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import myshop.dao.PersonDAO;
 import myshop.dao.productDAO;
 import myshop.dao.productDAOImpl;
+import myshop.model.Person;
 import myshop.model.product;
 import  org.springframework.web.servlet.ModelAndView;
 
@@ -53,7 +61,7 @@ productDAO productDAO=new productDAOImpl();
 	@RequestMapping("/delete")
 	public String deleteProduct()
 	{
-		product product=productDAO.getProductById(1);
+		product product=productDAO.getProductById(0);
 		
 		productDAO.deleteProduct(product);
 		
@@ -84,10 +92,19 @@ public String login()
 {
 	return"login";
 }
+	@Autowired
+	PersonDAO personDAO;
 	@RequestMapping("/signup")
-	public String signup()
+	public String signup(@Valid@ModelAttribute("person")Person person,BindingResult result,HttpServletRequest request)
 	{
-		return"signup";
+		if(result.hasErrors())
+		{
+			return "signup";
+		}
+		else{
+		personDAO.addPerson(person);
+		return "redirect:/signup";
+	}
 	}
     @RequestMapping("/productsdetail")
     

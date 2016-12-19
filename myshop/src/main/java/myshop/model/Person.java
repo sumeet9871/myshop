@@ -1,8 +1,11 @@
 package myshop.model;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -10,7 +13,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Person {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id ;
 	@NotEmpty(message="it cant be blank")
 	private String name;
@@ -21,8 +24,16 @@ public class Person {
 	private String password;
 	private String role;
 	private boolean enabled;
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cartId")
+	private Cart cart;
 	
-	
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	
 	public String getLastname() {
 		return lastname;

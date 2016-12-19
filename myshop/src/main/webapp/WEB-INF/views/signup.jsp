@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page session="false"%>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
 <meta charset="utf-8">
@@ -57,42 +62,42 @@ width:440px;
 </nav>
 <div class="container"  id="div">
 <h2 align="center">myshop</h2>
-<form class="form-horizontal">
+<form:form action="signup" modelAttribute="person" class="form-horizontal">
 <div class="form-group">
-<label  class="control-label col-sm-2" for="name">Name:</label>
+<form:label  class="control-label col-sm-2" path="name" for="name">Name:</form:label>
 <div class="col-xs-10">
-<input type="text" class="form-control" id="name" placeholder="Enter your name">
+<form:input class="form-control" id="name" path="name" placeholder="Enter your name"/>
 </div>
 </div>
 <div class="form-group">
-<label class="control-label col-sm-2" for="last-name">Last Name:</label>
+<form:label class="control-label col-sm-2" path="lastname" for="last-name">Last Name:</form:label>
 <div class="col-xs-10">
-<input type="text" class="form-control" id="last-name" placeholder="Enter your last name">
+<form:input class="form-control" id="last-name" path="lastname" placeholder="Enter your last name"/>
 </div>
 </div>
   <div class="form-group">
-    <label class="control-label col-sm-2" for="email">Email address:</label>
+    <form:label class="control-label col-sm-2" path="email" for="email">Email address:</form:label>
     <div class="col-xs-10">
-    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+    <form:input class="form-control" id="email" path="email" placeholder="Enter your email"/>
   </div>
   </div>
   <div class="form-group">
-<label class="control-label col-sm-2" for="mobile number">Mobile Number:</label>
+<form:label class="control-label col-sm-2" path="number" for="mobile number">Mobile Number:</form:label>
 <div class="col-xs-10">
-<input type="number" class="form-control" id="last-name" placeholder="Enter mobile no">
+<form:input class="form-control" path="number" id="mobile number" placeholder="Enter mobile no"/>
 </div>
 </div>
 <div class="form-group">
-<label  class="control-label col-sm-2"for="Address">Address:</label>
+<form:label  class="control-label col-sm-2" path="address" for="Address">Address:</form:label>
 <div class="col-xs-10">
-<input type="text" class="form-control" id="Address" required>
+<form:input class="form-control" path="address" id="Address" />
 </div>
 </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd">Password:</label>
+    <form:label class="control-label col-sm-2" path="password" for="pwd">Password:</form:label>
     <div class="col-xs-10">
-    <input type="password" class="form-control" id="pwd" required>
+    <form:input class="form-control" path="password" id="pwd"/>
   </div>
   </div>
   <div class="form-group">
@@ -101,8 +106,8 @@ width:440px;
      <input type="password" class="form-control" id="pwd1" required>
   </div>
   </div>
-  <button type="button"  class="btn btn-block btn-primary">Submit</button>
-</form>
+  <input type="submit"  class="btn btn-block btn-primary" value="<spring:message text="Add Person"/>"/>
+</form:form>
 </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
 <div class="container-fluid" style="color:white;">

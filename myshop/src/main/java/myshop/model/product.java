@@ -1,6 +1,8 @@
 package myshop.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Transient;
 
@@ -10,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class product 
 {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int productId;
 	private String productName;
 	private String brand;

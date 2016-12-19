@@ -53,4 +53,11 @@ public class productDAOImpl implements productDAO
 		session.delete(product);
 		
 	}
+
+	public List<product> getAllProductsByCategory(String category) 
+	{
+		Session session=sessionFactory.getCurrentSession();
+		List<product> products=session.createQuery("from product where category="+category).getResultList();
+		return products;
+	}
 }

@@ -8,4 +8,5 @@ public interface productDAO
 	public void addProduct(product product);
 	public void updateProduct(product product);
 	public void deleteProduct(product product);
+	public List<product>getAllProductsByCategory(String category);
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
+import myshop.model.Cart;
 import myshop.model.Person;
 
 @Repository("personDAO")
@@ -21,7 +22,13 @@ public class PersonDAOImpl implements PersonDAO{
 
 	public void addPerson(Person p) {
 		Session session=sessionFactory.getCurrentSession();
-		session.persist(p);
+		p.setEnabled(true);
+		p.setRole("ROLE_USER");
+		  
+		Cart cart=new Cart();
+		cart.setPerson(p);
+		p.setCart(cart);
+		session.saveOrUpdate(p);
 		
 	}
 
