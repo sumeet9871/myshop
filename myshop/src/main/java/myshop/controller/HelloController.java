@@ -56,20 +56,6 @@ productDAO productDAO=new productDAOImpl();
 		
 	}
 	
-	 
-	
-	@RequestMapping("/delete")
-	public String deleteProduct()
-	{
-		product product=productDAO.getProductById(0);
-		
-		productDAO.deleteProduct(product);
-		
-		
-		
-		return "redirect:/productpage";
-		
-	}
 	@RequestMapping("/update")
 	public String updateProduct()
 	{

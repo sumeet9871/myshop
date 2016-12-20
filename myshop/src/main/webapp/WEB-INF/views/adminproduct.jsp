@@ -5,7 +5,7 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
-	<title>Person Page</title>
+	<title>Product Page</title>
 	<style type="text/css">
 		.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
 		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
@@ -70,6 +70,16 @@
 	</tr>
 	<tr>
 		<td>
+			<form:label path="price">
+				<spring:message text="Price"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="price" />
+		</td> 
+	</tr>
+	<tr>
+		<td>
 			<form:label path="description">
 				<spring:message text="Description"/>
 			</form:label>
@@ -110,22 +120,24 @@
 		<th width="80">Product ID</th>
 		<th width="120">Product Name</th>
 			<th width="120">Brand</th>
+			<th width="120">Product price</th>
 		<th width="120">Category</th>
 		<th width="120">Description</th>
 		
 		<th width="60">Edit</th>
-	<!-- 	<th width="60">Delete</th> -->
+	<th width="60">Delete</th>
 	</tr>
 	<c:forEach items="${getAllProducts}" var="product">
 		<tr>
 			<td>${product.productId}</td>
 			<td>${product.productName}</td>
 			<td>${product.brand}</td>
+			<td>${product.price}</td>
 			<td>${product.category}</td>
 			<td>${product.description}</td>
 			
 			<td><a href="<c:url value='/update/${product.productId}' />" >Edit</a></td>
-			<%-- <td><a href="<c:url value='/remove/${product.productId}' />" >Delete</a></td> --%>
+			<td><a href="<c:url value='/delete/${product.productId}' />" >Delete</a></td> 
 		</tr>
 	</c:forEach>
 	</table>

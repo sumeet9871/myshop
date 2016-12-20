@@ -18,32 +18,10 @@ public class product
 	private String brand;
 	private String category;
 	private String description;
+	private double price;
 	@Transient
 	private MultipartFile image;
-	public String getBrand() {
-		return brand;
-	}
-	public void setBrand(String brand) {
-		this.brand = brand;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public MultipartFile getImage() {
-		return image;
-	}
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
-	private double price;
-	public product() {
-		super();
-		
-	}
-		public int getProductId() {
+	public int getProductId() {
 		return productId;
 	}
 	public void setProductId(int productId) {
@@ -55,11 +33,23 @@ public class product
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
 	public String getCategory() {
 		return category;
 	}
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public double getPrice() {
 		return price;
@@ -67,5 +57,10 @@ public class product
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+	public MultipartFile getImage() {
+		return image;
+	}
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 }

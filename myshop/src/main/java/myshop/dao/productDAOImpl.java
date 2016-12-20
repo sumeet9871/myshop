@@ -60,4 +60,11 @@ public class productDAOImpl implements productDAO
 		List<product> products=session.createQuery("from product where category="+category).getResultList();
 		return products;
 	}
+
+	public void deleteProduct(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		product product=(product)session.createQuery("from product where id="+id).getSingleResult();
+		session.delete(product);
+		
+	}
 }

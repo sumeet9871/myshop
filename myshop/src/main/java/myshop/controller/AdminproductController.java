@@ -53,7 +53,7 @@ public String addProduct(@Valid@ModelAttribute("product")product product,Binding
 			bytes = product.getImage().getBytes();
 			productDAO.addProduct(product);
 			System.out.println("Data Inserted");
-			String path = request.getSession().getServletContext().getRealPath("/resources/img/" +product.getProductId() + ".jpg");
+			String path = request.getSession().getServletContext().getRealPath("/resources/images/" +product.getProductId() + ".jpg");
 			System.out.println("Path = " + path);
 			System.out.println("File name = " + product.getImage().getOriginalFilename());
 			File f = new File(path);
@@ -88,12 +88,12 @@ public String updateProduct(@PathVariable("id") int id, Model model)
     model.addAttribute("getAllProducts", productDAO.getAllProducts());
     return "adminproduct";
 }
-/*@RequestMapping("/delete/{id}")
-public String deleteProduct(@PathVariable product product)
+@RequestMapping("/delete/{id}")
+public String deleteProduct(@PathVariable ("id") int id)
 {
-	productDAO.deleteProduct(product);
-	return "redirect:/adminprodcut";
-}*/
+	productDAO.deleteProduct(id);
+	return "redirect:/adminproduct";
+}
 	
 }
 

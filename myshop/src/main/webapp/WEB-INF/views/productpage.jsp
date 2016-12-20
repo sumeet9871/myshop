@@ -45,7 +45,7 @@ angular.module("productApp",[])
         <td>{{product.productName}}</td>
         <td>{{product.price}}</td>
         <td>{{product.category}}</td>
-   <td>{{product.category}}</td>
+   <td>{{product.description}}</td>
       </tr>
 	  
 	
