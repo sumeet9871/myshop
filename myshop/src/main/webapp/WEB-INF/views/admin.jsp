@@ -77,6 +77,7 @@
 		</td>
 		<td>
 			<form:input path="number" />
+			<form:errors path="number"/>
 		</td>
 	</tr>
 	<tr>

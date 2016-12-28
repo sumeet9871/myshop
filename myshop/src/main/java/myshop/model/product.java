@@ -21,6 +21,10 @@ public class product
 	private double price;
 	@Transient
 	private MultipartFile image;
+	
+	public product() {
+		super();
+	}
 	public int getProductId() {
 		return productId;
 	}

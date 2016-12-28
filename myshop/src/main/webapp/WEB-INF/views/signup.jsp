@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -41,22 +42,32 @@ width:440px;
 </div>
 <div class="collapse navbar-collapse" id="mynavbar">
 <ul class="nav navbar-nav">
-<li class="active"><a href="index"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;home</a><li>
+<li class="active"><a href="home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;home</a><li>
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;products<span class="caret"></span></a>
 <ul class="dropdown-menu">
-<li><a href="productpage">lg</a></li>
-<li><a href="#">sony</a><li>
-<li><a href="#">htc</a></li>
-<li><a href="#">samsung</a></li>
+<li><a href="<c:url value='productpage/lg android'/>">lg</a></li>
+<li><a href="<c:url value='productpage/android'/>">sony</a></li>
+<li><a href="<c:url value='productpage/htc android'/>">htc</a></li>
+<li><a href="<c:url value='productpage/smartphones'/>">samsung</a></li>
 </ul>
 </li>
 <li><a href="#">AboutUs</a></li>
 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
 </ul>
+<sec:authorize access="isAuthenticated()">
 <ul class="nav navbar-nav navbar-right">
-<li><a href="signup"><span class="glyphicon glyphicon-user"></span>SignUp</a><li>
-<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a><li>
+<li>
+<li>
+<a href="<c:url value='/Logout'/>">Sign Out</a>
+</li>
 </ul>
+</sec:authorize>
+<sec:authorize access="isAnonymous()">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="<c:url value='/signup'/>"><span class="glyphicon glyphicon-user"></span>Signup</a></li>
+<li><a href="<c:url value='/login'/>"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+</ul>
+</sec:authorize>
 </div>
 </div>
 </nav>

@@ -1,3 +1,8 @@
+ <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page session="false"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -33,21 +38,31 @@ background-size:100%;
 </div>
 <div class="collapse navbar-collapse" id="mynavbar">
 <ul class="nav navbar-nav">
-<li class="active"><a href="index"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;home</a></li>
+<li class="active"><a href="<c:url value='/home'/>"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;home</a></li>
  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;Product <span class="caret"></span></a>
 <ul class="dropdown-menu">
-<li><a href="productpage">lg</a></li>
-<li><a href="#">sony</a></li>
-<li><a href="#">htc</a></li>
-<li><a href="#">samsung</a></li>
+<li><a href="<c:url value='productpage/lg android'/>">lg</a></li>
+<li><a href="<c:url value='productpage/android'/>">sony</a></li>
+<li><a href="<c:url value='productpage/htc android'/>">htc</a></li>
+<li><a href="<c:url value='productpage/smartphones'/>">samsung</a></li>
 </ul>
 <li><a href="#">AboutUs</a></li>
 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
 </ul>
+<sec:authorize access="isAuthenticated()">
 <ul class="nav navbar-nav navbar-right">
-<li><a href="signup"><span class="glyphicon glyphicon-user"></span>Signup</a></li>
-<li><a href="login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+<li>
+<li>
+<a href="<c:url value='/Logout'/>">Sign Out</a>
+</li>
 </ul>
+</sec:authorize>
+<sec:authorize access="isAnonymous()">
+<ul class="nav navbar-nav navbar-right">
+<li><a href="<c:url value='/signup'/>"><span class="glyphicon glyphicon-user"></span>Signup</a></li>
+<li><a href="<c:url value='/login'/>"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+</ul>
+</sec:authorize>
 </div>
 </div>
 </nav>
@@ -61,19 +76,19 @@ background-size:100%;
   </ol>
 <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="resources/img/1.jpg"alt="hi">
+      <img src="resources/img/sony.jpg"alt="hi">
     </div>
 
     <div class="item">
-      <img src="resources/img/2.jpg" alt="hi">
+      <img src="resources/img/lg.jpg" alt="hi">
     </div>
 
     <div class="item">
-      <img src="resources/img/3.jpg" alt="hi">
+      <img src="resources/img/htc.jpg" alt="hi">
     </div>
 
     <div class="item">
-      <img src="resources/img/4.jpg" alt="hi">
+      <img src="resources/img/samsung.jpg" alt="hi">
     </div>
   </div>
  <a class="left carousel-control" href="#mycarousel" role="button" data-slide="prev">
@@ -93,15 +108,10 @@ background-size:100%;
  <div class="container-fluid">
   <table width="100%">
   <tr>
-  <td><img src="resources/img/a.jpg" class="img-circle" alt="hi" width="150" height="100"></td>
-  <td><img src="resources/img/b.jpg" class="img-circle" alt="hi" width="150" height="100"></td>
-  <td><img src="resources/img/c.jpg" class="img-circle" alt="hi" width="150" height="100"></td>
-  <td><img src="resources/img/d.jpg" class="img-circle" alt="hi" width="150" height="100"></td>
-  </tr>
-  <tr>
-  <td><h2>Guitar</h2></td>
-  <td><h2>Bass</h2></td>
-  <td><h2>Amplifier</h2></td>
+  <td><a href="<c:url value='productpage/android'/>"><img src="resources/img/a.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
+  <td><a href="<c:url value='productpage/htc android'/>"><img src="resources/img/b.jpg" class="img-circle" alt="hi" width="150" height="100"></a>></td>
+  <td><a href="<c:url value='productpage/lg android'/>"><img src="resources/img/c.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
+  <td><a href="<c:url value='productpage/smartphones'/>"><img src="resources/img/d.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
   </tr>
   </table>
   </div>

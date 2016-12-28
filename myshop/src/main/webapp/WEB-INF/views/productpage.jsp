@@ -1,6 +1,8 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ include file="header.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ include file="header1.jsp" %>
  <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -10,6 +12,7 @@
 
 var prod=${productList};
 angular.module("productApp",[])
+
 
 .controller("productController",function($scope){
 	
@@ -35,6 +38,7 @@ angular.module("productApp",[])
         <th ng-click="sort('price')">Price</th>
         <th ng-click="sort('category')">Category</th>
        <th ng-click="sort('description')">Description</th>
+       <th>More Info</th>
       </tr>
     </thead>
     <tbody>
@@ -46,6 +50,7 @@ angular.module("productApp",[])
         <td>{{product.price}}</td>
         <td>{{product.category}}</td>
    <td>{{product.description}}</td>
+   <td><a href="<c:url value='/productsdetail/{{product.productId}}'/>"><i class="fa fa-info-circle" aria-hidden="true"></i></a></td>
       </tr>
 	  
 	

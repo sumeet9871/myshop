@@ -32,7 +32,7 @@ public class productDAOImpl implements productDAO
 
 	public product getProductById(int id) {
 		Session session=sessionFactory.getCurrentSession();
-		product product=(product)session.createQuery("from product where id="+id).getSingleResult();
+		product product=(product)session.createQuery("from product where productId="+id).getSingleResult();
 		return product;
 	}
 
@@ -57,8 +57,9 @@ public class productDAOImpl implements productDAO
 	public List<product> getAllProductsByCategory(String category) 
 	{
 		Session session=sessionFactory.getCurrentSession();
-		List<product> products=session.createQuery("from product where category="+category).getResultList();
+		List<product> products=session.createQuery("from product where category='" + category + "'").getResultList();
 		return products;
+		
 	}
 
 	public void deleteProduct(int id) {

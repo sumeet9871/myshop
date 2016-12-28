@@ -7,19 +7,19 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
-import myshop.model.Order;
+import myshop.dao.UserOrderDAO;
+import myshop.model.UserOrder;
 
-@Repository("OrderDAO")
+@Repository("UserOrderDAO")
 @Transactional
 @EnableTransactionManagement
-public class OrderDAOImpl implements OrderDAO{
-
+public class UserOrderDAOImpl implements UserOrderDAO {
 	@Autowired
 	SessionFactory sessionFactory;
-	public void addOrder(Order Order) {
-	
+	public void addOrder(UserOrder userOrder) {
+		
 		Session session=sessionFactory.getCurrentSession();
-		session.saveOrUpdate(Order);
+		session.saveOrUpdate(userOrder);
 	}
 
 }

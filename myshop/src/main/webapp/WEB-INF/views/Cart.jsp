@@ -27,11 +27,26 @@
 	</div>
 	<div class="col-sm-6">
 		<h2>Name:${product.productName }</h2>
-		<br> <label>Brand:${product.brand }</label> <label>Category:${product.category }</label>
+		<br> <label>Brand:${product.brand }</label> <br><label>Category:${product.category }</label>
 		<br> <label>Description:${product.description }</label> <br> <label>Price:${product.price }</label>
-		<br> <a  class="btn btn-primary" href=" <c:url value='/AddToCart/${product.productId}'/> "> Add to Cart</a>
+		 <table class="table">
 		
+      <tr>
+        <th>Quantity</th>
+         <th>ItemTotal</th>
+          <th></th>
+   
+	<c:forEach items="${items}" var="items">
+						<tr>
 
+							<td>${items.quantity }</td>
+							<td>${items.itemTotal }</td>
+							<td><a href="<c:url value='/cart/remove/${item.itemId}'/>">Remove</a></td>
+
+						</tr>
+					</c:forEach>
+				</table>
+				
 	</div>
 </div>
 <%@ include file="footer.jsp" %>

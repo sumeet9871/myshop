@@ -58,5 +58,11 @@ public class PersonDAOImpl implements PersonDAO{
 		
 	}
 
+	public Person getPersonByName(String name) {
+		Session session = sessionFactory.getCurrentSession();
+		Person person = (Person) session.createQuery("from Person where name='" + name+"'").getSingleResult();
+		return person;
+	}
+
 }
 

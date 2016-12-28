@@ -8,7 +8,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,7 +52,7 @@ public String addProduct(@Valid@ModelAttribute("product")product product,Binding
 			bytes = product.getImage().getBytes();
 			productDAO.addProduct(product);
 			System.out.println("Data Inserted");
-			String path = request.getSession().getServletContext().getRealPath("/resources/images/" +product.getProductId() + ".jpg");
+			String path = request.getSession().getServletContext().getRealPath("/resources/img/" +product.getProductId() + ".jpg");
 			System.out.println("Path = " + path);
 			System.out.println("File name = " + product.getImage().getOriginalFilename());
 			File f = new File(path);

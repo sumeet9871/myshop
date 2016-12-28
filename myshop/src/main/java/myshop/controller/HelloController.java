@@ -3,13 +3,20 @@ package myshop.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import myshop.dao.PersonDAO;
 import myshop.dao.productDAO;
@@ -26,10 +33,10 @@ public class HelloController
 	@Autowired
 productDAO productDAO=new productDAOImpl();
 	
-	@RequestMapping("/productpage")
-	public ModelAndView products()
+	@RequestMapping("/productpage/{category}")
+	public ModelAndView products(@PathVariable("category")String category)
 	{
-		List<product> products=productDAO.getAllProducts();
+		List<product> products=productDAO.getAllProductsByCategory(category);
 		String productList=new Gson().toJson(products);
 		ModelAndView model=new ModelAndView("productpage");
 		model.addObject("productList", productList);
@@ -37,36 +44,12 @@ productDAO productDAO=new productDAOImpl();
 		return model;
 		
 	}
-	
+	@RequestMapping("/productsdetail/{productId}")
+	public String productsdetail(@PathVariable("productId") int productId, Model model) {
+		product products = productDAO.getProductById(productId);
+		model.addAttribute("product", products);
+		return "productsdetail";
 
-
-
-	@RequestMapping("/add")
-	public String addProduct()
-	{
-		product product=new product();
-		product.setProductName("lg D700");
-		product.setPrice(10500);
-		product.setCategory("phone");
-		productDAO.addProduct(product);
-		
-		
-		
-		return "redirect:/productpage";
-		
-	}
-	
-	@RequestMapping("/update")
-	public String updateProduct()
-	{
-		product product=productDAO.getProductById(0);
-		product.setPrice(11050);
-		productDAO.updateProduct(product);
-		
-		
-		
-		return "redirect:/productpage";
-		
 	}
 	@RequestMapping("/home")
 	public String home()
@@ -92,16 +75,23 @@ public String login()
 		return "redirect:/signup";
 	}
 	}
-    @RequestMapping("/productsdetail")
-    
-    	public String productsdetails()
-    	{
-    		return"productsdetail";
-    	}
-
 	@RequestMapping("/footer")
 	public String header()
 	{
 		return"footer";
 	}
-}
+	
+	@RequestMapping("/")
+	public String homereturn()
+	{
+		return"index";
+	}
+	@RequestMapping(value="/Logout", method = RequestMethod.GET)
+    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+       Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+       if (auth != null){    
+          new SecurityContextLogoutHandler().logout(request, response, auth);
+       }
+       return "redirect:/login?logout";    
+       }
+	}
