@@ -21,30 +21,29 @@
 <br>
 
 <div class="container-fluid">
-	<div class="col-sm-6">
-		
-			<img src="<c:url value='/resources/img/${product.productId}.jpg'/>"width="350" height="300">
-	</div>
-	<div class="col-sm-6">
-		<h2>Name:${product.productName }</h2>
-		<br> <label>Brand:${product.brand }</label> <br><label>Category:${product.category }</label>
-		<br> <label>Description:${product.description }</label> <br> <label>Price:${product.price }</label>
+	
 		 <table class="table">
 		
       <tr>
+      <th>Product Name</th>
+      <th>Brand</th>
+      <th>Price</th>
         <th>Quantity</th>
          <th>ItemTotal</th>
           <th></th>
-   
+   <c:if test="${!empty items }">
 	<c:forEach items="${items}" var="items">
 						<tr>
-
+                           <td>${items.product.productName }</td>
+                           <td>${items.product.brand }</td>
+                           <td>${items.product.price }</td>
 							<td>${items.quantity }</td>
 							<td>${items.itemTotal }</td>
-							<td><a href="<c:url value='/cart/remove/${item.itemId}'/>">Remove</a></td>
+							<td><a href="<c:url value='/Cart/remove/${items.itemId}'/>">Remove</a></td>
 
 						</tr>
 					</c:forEach>
+					</c:if>
 				</table>
 				
 	</div>

@@ -13,6 +13,12 @@ public class UserOrder {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userOrderId;
+@OneToOne(cascade=CascadeType.ALL)
+@JoinColumn(name="cartId")
+private Cart cart;
+@OneToOne
+@JoinColumn(name="id")
+private Person person;
 public int getUserOrderId() {
 	return userOrderId;
 }
@@ -31,10 +37,5 @@ public Person getPerson() {
 public void setPerson(Person person) {
 	this.person = person;
 }
-@OneToOne(cascade=CascadeType.ALL)
-@JoinColumn(name="cartId")
-private Cart cart;
-@OneToOne
-@JoinColumn(name="id")
-private Person person;
+
 }

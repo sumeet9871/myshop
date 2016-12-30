@@ -21,5 +21,10 @@ public class UserOrderDAOImpl implements UserOrderDAO {
 		Session session=sessionFactory.getCurrentSession();
 		session.saveOrUpdate(userOrder);
 	}
+	public UserOrder getUserOrderById(int orderId) {
+		Session session=sessionFactory.getCurrentSession();
+		UserOrder userOrder=(UserOrder)session.createQuery("from UserOrder where orderId="+orderId).getSingleResult();
+		return userOrder;
+	}
 
 }

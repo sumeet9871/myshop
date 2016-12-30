@@ -2,12 +2,14 @@ package myshop.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -17,14 +19,13 @@ public class Cart {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int cartId;
-	@OneToMany(fetch=FetchType.EAGER)
-	@JoinColumn(name="itemId")
+	@OneToMany(fetch=FetchType.EAGER ,mappedBy="cart",cascade=CascadeType.ALL)
 	private List<Item> items;
 	@OneToOne
 	@JoinColumn(name="id")
 	private Person person;
-	
-	
+	@ManyToOne
+    @JoinColumn(name = "productId")
 	public int getCartId() {
 		return cartId;
 	}

@@ -35,7 +35,6 @@ public String cartInsertion(@PathVariable("productId") int productId, Principal 
 	Person person = personDAO.getPersonByName(principal.getName());
 	Cart cart = person.getCart();
 	product product=productDAO.getProductById(productId);
-	model.addAttribute("product", product);
 	List<Item> items=cart.getItems();
 	model.addAttribute("items", items);
 	for(int i=0; i<items.size();i++)
@@ -63,7 +62,7 @@ public String cartInsertion(@PathVariable("productId") int productId, Principal 
 public String removeItem(@PathVariable("itemId") int itemId, Model model) {
 
 	itemDAO.removeItem(itemDAO.getItemById(itemId));
-	return "redirect:/cart";
+	return "redirect:/Cart";
 }
 
 @RequestMapping("/Cart")
@@ -75,6 +74,7 @@ public ModelAndView cart(Principal principal)
 	model.addObject("Person",person);
 	Cart cart=person.getCart();
 	List<Item> items=cart.getItems();
+	model.addObject("items", items);
 
     return model;
 }
