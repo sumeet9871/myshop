@@ -13,10 +13,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
 <style>
-body{
+/* body{
 background-image:url("resources/img/gb1.jpg");
 background-size:100%;
-}
+} */
 
    .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -52,6 +52,7 @@ background-size:100%;
 <sec:authorize access="isAuthenticated()">
 <ul class="nav navbar-nav navbar-right">
 <li>
+<a href="">Welcome <b><sec:authentication property="principal.username"/></b></a>
 <li>
 <a href="<c:url value='/Logout'/>">Sign Out</a>
 </li>

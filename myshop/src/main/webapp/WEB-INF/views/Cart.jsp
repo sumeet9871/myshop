@@ -23,29 +23,33 @@
 <div class="container-fluid">
 	
 		 <table class="table">
-		
       <tr>
       <th>Product Name</th>
       <th>Brand</th>
       <th>Price</th>
         <th>Quantity</th>
          <th>ItemTotal</th>
+                
+         
           <th></th>
-   <c:if test="${!empty items }">
+ <c:set var="Total" value="${0}" />
 	<c:forEach items="${items}" var="items">
 						<tr>
                            <td>${items.product.productName }</td>
                            <td>${items.product.brand }</td>
                            <td>${items.product.price }</td>
 							<td>${items.quantity }</td>
+							 <c:set var="Total" value="${Total + items.itemTotal}" />
 							<td>${items.itemTotal }</td>
+				
 							<td><a href="<c:url value='/Cart/remove/${items.itemId}'/>">Remove</a></td>
 
 						</tr>
-					</c:forEach>
-					</c:if>
+						
+					</c:forEach>	
 				</table>
-				
+				<h1> Grand total: ${Total}</h1>
+					<br> <a class="btn btn-primary" href=" <c:url value='/order/${cartId}'/> ">CheckOut</a>
 	</div>
 </div>
 <%@ include file="footer.jsp" %>

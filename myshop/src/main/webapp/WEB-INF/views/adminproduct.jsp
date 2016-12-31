@@ -3,6 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false"%>
 <%@ page isELIgnored="false" %>
+<%@ include file="header1.jsp" %>
 <html>
 <head>
 	<title>Product Page</title>
@@ -144,3 +145,4 @@
 </c:if>
 </body>
 </html>
+<%@ include file="footer.jsp" %>

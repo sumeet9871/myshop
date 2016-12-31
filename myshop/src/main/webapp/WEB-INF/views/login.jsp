@@ -16,10 +16,10 @@
    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
   <style>
-body{
+/* body{
 background-image:url("resources/img/gb1.jpg");
 background-size:100%;
-}
+} */
 #div { 
     background-color:#fafaf2;
 	width:300px;
@@ -73,7 +73,7 @@ background-size:100%;
  <div class="container-fluid" align="center" id="div">
 <div class="form-group">
 <form action="login" method="POST">
-<h2 align="center">myshop</h2>
+<h2 align="center">Myshop</h2>
   <div class="form-group">
     <label for="username">User Name:</label>
     <input type="text" class="form-control" id="username" name="username">

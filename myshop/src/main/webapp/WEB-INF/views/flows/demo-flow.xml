@@ -2,7 +2,10 @@
 
 <flow xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/webflow">
 
-
+ <action-state id="orderProcess">
+         <evaluate expression="userOrderDAO.getUserOrderById(requestParameters.orderId)" result="order" />
+		<transition to="ShippingAddress" />
+	</action-state>
 <view-state view="Page1.jsp" id="page1">
 
 <transition to="page2" on="event1"/>

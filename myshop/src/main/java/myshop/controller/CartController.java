@@ -12,12 +12,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import myshop.dao.CartDAO;
 import myshop.dao.ItemDAO;
 import myshop.dao.PersonDAO;
+import myshop.dao.UserOrderDAO;
 import myshop.dao.productDAO;
 import myshop.model.Cart;
 import myshop.model.Item;
 import myshop.model.Person;
+import myshop.model.UserOrder;
 import myshop.model.product;
 
 @Controller
@@ -28,15 +31,20 @@ PersonDAO personDAO;
 ItemDAO itemDAO;
 @Autowired
 productDAO productDAO;
-
+@Autowired
+CartDAO cartDAO;
+@Autowired
+UserOrderDAO userOrderDAO;
 @RequestMapping("/AddToCart/{productId}")
 public String cartInsertion(@PathVariable("productId") int productId, Principal principal, Model model) {
 	
 	Person person = personDAO.getPersonByName(principal.getName());
 	Cart cart = person.getCart();
 	product product=productDAO.getProductById(productId);
+	model.addAttribute("Person",person);
 	List<Item> items=cart.getItems();
 	model.addAttribute("items", items);
+	
 	for(int i=0; i<items.size();i++)
 	{
 		if(product.getProductId()==items.get(i).getProduct().getProductId()){;
@@ -47,6 +55,7 @@ public String cartInsertion(@PathVariable("productId") int productId, Principal 
 		
 		return"Cart";
 		}
+		
 	}
 	 Item item =new Item();
      item.setProduct(product);
@@ -77,5 +86,18 @@ public ModelAndView cart(Principal principal)
 	model.addObject("items", items);
 
     return model;
+}
+@RequestMapping("/order/{cartId}")
+public String createOrder(@PathVariable("cartId") int cartId,Model model){
+	 UserOrder userOrder=new UserOrder();
+	 Cart cart=cartDAO.getCartById(cartId);
+	 userOrder.setCart(cart);
+	 Person person=cart.getPerson();
+	 userOrder.setPerson(person);
+	 userOrderDAO.addOrder(userOrder);
+	 
+	 
+	 
+	 return "redirect:/checkout?orderId="+userOrder.getUserOrderId();
 }
 }

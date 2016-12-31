@@ -46,6 +46,8 @@ body{
 <sec:authorize access="isAuthenticated()">
 <ul class="nav navbar-nav navbar-right">
 <li>
+<a href="">Welcome <b><sec:authentication property="principal.username"/></b></a>
+<li>
 <li>
 <a href="<c:url value='/Logout'/>">Sign Out</a>
 </li>

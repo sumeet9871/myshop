@@ -16,10 +16,10 @@
    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
     <style>
-body{
+/* body{
 background-image:url("resources/img/gb1.jpg");
 background-size:100%;
-}
+} */
 #div{
 background-image:url("resources/img/gb2.jpg");
 background-color:#FAF7F7;
@@ -72,12 +72,13 @@ width:440px;
 </div>
 </nav>
 <div class="container"  id="div">
-<h2 align="center">myshop</h2>
+<h2 align="center">Myshop</h2>
 <form:form action="signup" modelAttribute="person" class="form-horizontal">
 <div class="form-group">
 <form:label  class="control-label col-sm-2" path="name" for="name">Name:</form:label>
 <div class="col-xs-10">
 <form:input class="form-control" id="name" path="name" placeholder="Enter your name"/>
+
 </div>
 </div>
 <div class="form-group">
@@ -96,25 +97,21 @@ width:440px;
 <form:label class="control-label col-sm-2" path="number" for="mobile number">Mobile Number:</form:label>
 <div class="col-xs-10">
 <form:input class="form-control" path="number" id="mobile number" placeholder="Enter mobile no"/>
+<form:errors path="number"/>
 </div>
 </div>
 <div class="form-group">
 <form:label  class="control-label col-sm-2" path="address" for="Address">Address:</form:label>
 <div class="col-xs-10">
-<form:input class="form-control" path="address" id="Address" />
+<form:input class="form-control" path="address" id="Address"/>
 </div>
 </div>
 
   <div class="form-group">
     <form:label class="control-label col-sm-2" path="password" for="pwd">Password:</form:label>
     <div class="col-xs-10">
-    <form:input class="form-control" path="password" id="pwd"/>
-  </div>
-  </div>
-  <div class="form-group">
-    <label class="control-label col-sm-2" for="pwd1">Confirm Password</label>
-    <div class="col-xs-10">
-     <input type="password" class="form-control" id="pwd1" required>
+    <form:input type="password" class="form-control" path="password" id="pwd"/>
+    <form:errors path="password"/>
   </div>
   </div>
   <input type="submit"  class="btn btn-block btn-primary" value="<spring:message text="Add Person"/>"/>
