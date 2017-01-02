@@ -49,8 +49,8 @@ background-size:100%;
 <li><a href="<c:url value='productpage/smartphones'/>">samsung</a></li>
 </ul>
 </li>
-<li><a href="#">AboutUs</a></li>
-<li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
+<li><a href="<c:url value='/Aboutus'/>">AboutUs</a></li>
+<li><a href="<c:url value='/Aboutus'/>"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
 </ul>
 <sec:authorize access="isAuthenticated()">
 <ul class="nav navbar-nav navbar-right">

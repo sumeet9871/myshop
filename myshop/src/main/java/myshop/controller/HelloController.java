@@ -76,7 +76,7 @@ public String login()
 	}
 	}
 	@RequestMapping("/footer")
-	public String header()
+	public String footer()
 	{
 		return"footer";
 	}
@@ -94,4 +94,21 @@ public String login()
        }
        return "redirect:/login?logout";    
        }
+
+	@RequestMapping("/Aboutus")
+	public String aboutus()
+	{
+		return"Aboutus";
+	}
+	@RequestMapping("/header")
+	public String header()
+	{
+		return"header1";
+	}
+
+	@RequestMapping("/Contactus")
+	public String contactus()
+	{
+		return"Contactus";
+	}
 	}

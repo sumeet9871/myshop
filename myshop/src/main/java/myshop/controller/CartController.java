@@ -87,17 +87,21 @@ public ModelAndView cart(Principal principal)
 
     return model;
 }
-@RequestMapping("/order/{cartId}")
-public String createOrder(@PathVariable("cartId") int cartId,Model model){
-	 UserOrder userOrder=new UserOrder();
-	 Cart cart=cartDAO.getCartById(cartId);
-	 userOrder.setCart(cart);
-	 Person person=cart.getPerson();
-	 userOrder.setPerson(person);
-	 userOrderDAO.addOrder(userOrder);
-	 
-	 
-	 
-	 return "redirect:/checkout?orderId="+userOrder.getUserOrderId();
+	 @RequestMapping("/order/{cartId}")
+     public String createOrder(@PathVariable("cartId") int cartId ,Model model){
+		 UserOrder userOrder=new UserOrder();
+		 Cart cart=cartDAO.getCartById(cartId);
+		
+		
+		 userOrder.setCart(cart);
+		 Person person=cart.getPerson();
+		 userOrder.setPerson(person);
+		 
+		 userOrderDAO.addOrder(userOrder);
+    	 
+		 
+    	 
+    	 return "redirect:/Cart";
+	
 }
 }

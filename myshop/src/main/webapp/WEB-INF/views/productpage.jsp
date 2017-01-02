@@ -8,6 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
+  
 <script>
 
 var prod=${productList};
@@ -26,7 +27,6 @@ angular.module("productApp",[])
 });
 
 </script>
-
 <div  class="container" ng-app="productApp" ng-controller="productController"> 
 <input type="text" ng-model="search" align="right" placeholder="Search"/>
   <table class="table table-bordered" align="justify">

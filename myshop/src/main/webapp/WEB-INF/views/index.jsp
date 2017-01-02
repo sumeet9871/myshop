@@ -13,10 +13,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
 <style>
-/* body{
-background-image:url("resources/img/gb1.jpg");
+ body{
+background-image:url("resources/img/bg.jpg");
 background-size:100%;
-} */
+} 
 
    .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
@@ -46,8 +46,8 @@ background-size:100%;
 <li><a href="<c:url value='productpage/htc android'/>">htc</a></li>
 <li><a href="<c:url value='productpage/smartphones'/>">samsung</a></li>
 </ul>
-<li><a href="#">AboutUs</a></li>
-<li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
+<li><a href="<c:url value='/Aboutus'/>">AboutUs</a></li>
+<li><a href="<c:url value='/Aboutus'/>"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
 </ul>
 <sec:authorize access="isAuthenticated()">
 <ul class="nav navbar-nav navbar-right">
@@ -110,7 +110,7 @@ background-size:100%;
   <table width="100%">
   <tr>
   <td><a href="<c:url value='productpage/android'/>"><img src="resources/img/a.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
-  <td><a href="<c:url value='productpage/htc android'/>"><img src="resources/img/b.jpg" class="img-circle" alt="hi" width="150" height="100"></a>></td>
+  <td><a href="<c:url value='productpage/htc android'/>"><img src="resources/img/b.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
   <td><a href="<c:url value='productpage/lg android'/>"><img src="resources/img/c.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
   <td><a href="<c:url value='productpage/smartphones'/>"><img src="resources/img/d.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
   </tr>
