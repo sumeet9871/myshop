@@ -11,4 +11,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
+  <h2> (Contact us - 9911937148
+EmailId- myshop@gmail.com)</h2>
+
+<h3>
+ABOUT MyShop Created in 1873,authentic mobile phones. They are the most widely recognised and often imitated  products in the history of phones. Over successive generations, Sony® phones have captured the attention, imagination and loyalty of diverse individuals. As the inventor of the category, the Sony® brand continues to define phones with the widest range of products available.</h3>
   <%@ include file="footer.jsp" %>

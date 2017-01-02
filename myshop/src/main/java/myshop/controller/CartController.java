@@ -92,14 +92,12 @@ public ModelAndView cart(Principal principal)
 		 UserOrder userOrder=new UserOrder();
 		 Cart cart=cartDAO.getCartById(cartId);
 		
-		
 		 userOrder.setCart(cart);
 		 Person person=cart.getPerson();
 		 userOrder.setPerson(person);
 		 
 		 userOrderDAO.addOrder(userOrder);
-    	 
-		 
+	
     	 
     	 return "redirect:/Cart";
 	

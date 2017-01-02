@@ -11,4 +11,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
+  <h1>For details contact us at myshop.gmail.com</h1>
   <%@ include file="footer.jsp" %>
