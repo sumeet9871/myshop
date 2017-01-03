@@ -16,10 +16,10 @@
    <script src="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
   <style>
-/* body{
-background-image:url("resources/img/gb1.jpg");
+ body{
+background-image:url("resources/img/bg.jpg");
 background-size:100%;
-} */
+} 
 #div { 
     background-color:#fafaf2;
 	width:300px;

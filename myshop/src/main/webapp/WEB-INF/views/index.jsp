@@ -56,6 +56,7 @@ background-size:100%;
 <li>
 <a href="<c:url value='/Logout'/>">Sign Out</a>
 </li>
+ <li><a href="<c:url value='/Cart'/>"><i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i> Cart</a></li>
 </ul>
 </sec:authorize>
 <sec:authorize access="isAnonymous()">
@@ -102,6 +103,15 @@ background-size:100%;
   </a>
 </div>
 </div>
+<div class="container" id="div1">
+<div class="row">
+  <div class="col-sm-6" >
+   <h2>Easy Payment{All Credit and Debit Cards Accepted}</h2>
+   <h2>100% Payment Protection</h2>
+   <h2>Customer Satisfaction</h2>
+  </div>
+  </div>
+  </div>
 <div class="container-fluid" align="right">
 <iframe width="420" height="300" src="https://www.youtube.com/embed/z4uCgicyCK8"></iframe>
 </div>
@@ -114,6 +124,12 @@ background-size:100%;
   <td><a href="<c:url value='productpage/lg android'/>"><img src="resources/img/c.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
   <td><a href="<c:url value='productpage/smartphones'/>"><img src="resources/img/d.jpg" class="img-circle" alt="hi" width="150" height="100"></a></td>
   </tr>
+  
+  <tr>
+  <td><h2>SONY</h2></td>
+  <td><h2>HTC</h2></td>
+  <td><h2>Lg</h2></td>
+ <td><h2>SAMSUNG</h2></td>
   </table>
   </div>
 <nav class="navbar navbar-inverse navbar-fixed-bottom">

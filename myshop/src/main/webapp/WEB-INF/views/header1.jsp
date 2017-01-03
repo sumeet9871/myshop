@@ -52,6 +52,7 @@ background-size:100%;
 <li>
 <li>
 <a href="<c:url value='/Logout'/>">Sign Out</a>
+<li><a href="<c:url value='/Cart'/>"><i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i> Cart</a></li>
 </li>
 </ul>
 </sec:authorize>
