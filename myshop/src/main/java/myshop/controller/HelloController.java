@@ -44,6 +44,16 @@ productDAO productDAO=new productDAOImpl();
 		return model;
 		
 	}
+	 @RequestMapping("/productpage/All")
+	 public ModelAndView products()
+	 {
+		List<product> products=productDAO.getAllProducts();
+	 	String productList=new Gson().toJson(products);
+	 	ModelAndView model=new ModelAndView("productpage");
+	 	model.addObject("productList", productList);
+	 	return model;
+		
+	 }
 	@RequestMapping("/productsdetail/{productId}")
 	public String productsdetail(@PathVariable("productId") int productId, Model model) {
 		product products = productDAO.getProductById(productId);

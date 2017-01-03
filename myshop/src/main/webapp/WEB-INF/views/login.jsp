@@ -43,6 +43,7 @@ background-size:100%;
 <li class="active"><a href="home"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;home</a><li>
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-product-hunt" aria-hidden="true"></i>&nbsp;products<span class="caret"></span></a>
 <ul class="dropdown-menu">
+<li><a href="<c:url value='productpage/All'/>">All Products</a></li>
 <li><a href="<c:url value='productpage/lg android'/>">lg</a></li>
 <li><a href="<c:url value='productpage/android'/>">sony</a></li>
 <li><a href="<c:url value='productpage/htc android'/>">htc</a></li>
@@ -50,22 +51,37 @@ background-size:100%;
 </ul>
 </li>
 <li><a href="<c:url value='/Aboutus'/>">AboutUs</a></li>
-<li><a href="<c:url value='/Aboutus'/>"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
+<li><a href="<c:url value='/Contactus'/>"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;ContactUs</a></li>
 </ul>
-<sec:authorize access="isAuthenticated()">
-<ul class="nav navbar-nav navbar-right">
+<sec:authorize access="hasRole('ROLE_ADMIN')">
+     <ul class="nav navbar-nav navbar-right">
+     <li>
+<a href="">Welcome <b><sec:authentication property="principal.username"/></b></a>
 <li>
+      <li><a href="<c:url value='/admin'/>"><i class="fa fa-buysellads fa-fw" aria-hidden="true"></i> Admin Page</a></li>
+       <li><a href="<c:url value='/adminproduct'/>"><i class="fa fa-buysellads fa-fw" aria-hidden="true"></i> Admin Product Page</a></li>
+      <li>
+<a href="<c:url value='/Logout'/>">Sign Out</a>
+</li>
+ <li><a href="<c:url value='/Cart'/>"><i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i> Cart</a></li>
+</ul>
+  </sec:authorize>
+  <sec:authorize access="hasRole('ROLE_USER')">
+     <ul class="nav navbar-nav navbar-right">
+     <li>
+<a href="">Welcome <b><sec:authentication property="principal.username"/></b></a>
 <li>
 <a href="<c:url value='/Logout'/>">Sign Out</a>
 </li>
+ <li><a href="<c:url value='/Cart'/>"><i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i> Cart</a></li>
 </ul>
-</sec:authorize>
-<sec:authorize access="isAnonymous()">
-<ul class="nav navbar-nav navbar-right">
-<li><a href="<c:url value='/signup'/>"><span class="glyphicon glyphicon-user"></span>Signup</a></li>
+      </sec:authorize>
+  <sec:authorize access="isAnonymous()">
+  <ul class="nav navbar-nav navbar-right">
+     <li><a href="<c:url value='/signup'/>"><span class="glyphicon glyphicon-user"></span>Signup</a></li>
 <li><a href="<c:url value='/login'/>"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-</ul>
-</sec:authorize>
+  </ul>
+  </sec:authorize>
 </div>
 </div>
 </nav>

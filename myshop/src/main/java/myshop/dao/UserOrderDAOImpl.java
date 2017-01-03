@@ -10,16 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
 import myshop.dao.UserOrderDAO;
 import myshop.model.UserOrder;
 
-@Repository("UserOrderDAO")
+@Repository("userOrderDAO")
 @Transactional
 @EnableTransactionManagement
 public class UserOrderDAOImpl implements UserOrderDAO {
 	@Autowired
 	SessionFactory sessionFactory;
-	public void addOrder(UserOrder userOrder) {
+	public void addOrder(UserOrder order) {
 		
 		Session session=sessionFactory.getCurrentSession();
-		session.saveOrUpdate(userOrder);
+		session.saveOrUpdate(order);
 	}
 	public UserOrder getUserOrderById(int orderId) {
 		Session session=sessionFactory.getCurrentSession();

@@ -33,8 +33,8 @@ public class ShippingAddressDAOImpl implements ShippingAddressDAO {
 
 	public ShippingAddress getShippingAddressById(int personaddressid) {
 		Session session=sessionFactory.getCurrentSession();
-		ShippingAddress shippingadress=(ShippingAddress) session.createQuery("from ShippingAddress where personaddressid="+personaddressid).getSingleResult();
-		return shippingadress;
+		ShippingAddress shippingaddress=(ShippingAddress) session.createQuery("from ShippingAddress where personaddressid="+personaddressid).getSingleResult();
+		return shippingaddress;
 	}
 
 }

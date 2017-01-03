@@ -1,5 +1,7 @@
 package myshop.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,24 +11,24 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class UserOrder {
+public class UserOrder  implements Serializable{
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int userOrderId;
+	private int orderId;
 @OneToOne(cascade=CascadeType.ALL)
 @JoinColumn(name="cartId")
 private Cart cart;
 @OneToOne
 @JoinColumn(name="id")
 private Person person;
-public int getUserOrderId() {
-	return userOrderId;
-}
-public void setUserOrderId(int userOrderId) {
-	this.userOrderId = userOrderId;
-}
 public Cart getCart() {
 	return cart;
+}
+public int getOrderId() {
+	return orderId;
+}
+public void setOrderId(int orderId) {
+	this.orderId = orderId;
 }
 public void setCart(Cart cart) {
 	this.cart = cart;

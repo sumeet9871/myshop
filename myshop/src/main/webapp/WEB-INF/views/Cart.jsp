@@ -49,7 +49,7 @@
 					</c:forEach>	
 				</table>
 				<h1> Grand total: ${Total}</h1>
-					<br> <a class="btn btn-primary" href=" <c:url value='/order/${person.cart.cartId}'/> ">CheckOut</a>
+					<br> <a class="btn btn-primary" href=" <c:url value='/order/addorder/${cart.cartId}'/> ">CheckOut</a>
 	</div>
 </div>
 <%@ include file="footer.jsp" %>

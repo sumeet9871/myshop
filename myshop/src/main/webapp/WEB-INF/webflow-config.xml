@@ -23,7 +23,7 @@
 
 <flow:flow-registry id="flowRegistry">
 
-<flow:flow-location id="demoFlow" path="/WEB-INF/views/flows/demo-flow.xml"/>
+<flow:flow-location id="checkoutFlow" path="/WEB-INF/views/flows/checkout-flow.xml"/>
 
 </flow:flow-registry>
 
