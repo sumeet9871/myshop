@@ -12,7 +12,7 @@
   
    <div class="container">
 		<c:url var="addAction" value="/shippingaddress/add"></c:url>
-		<form:form action="${addAction}"
+		<form:form action="${addAction}" commandName="shippingaddress"
 			modelAttribute="shippingaddress" method="POST">
 			<h2 style="color: white">ShippingAddress</h2>
 			<form:input type="text" id="phonenumber" class="form-control"

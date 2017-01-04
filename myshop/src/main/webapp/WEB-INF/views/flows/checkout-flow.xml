@@ -4,7 +4,7 @@
 	http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
     <var name="order" class="myshop.model.UserOrder" />
-
+    <var name="shippingaddress" class="myshop.model.ShippingAddress"/>
     <action-state id="orderProcess">
          <evaluate expression="userOrderDAO.getUserOrderById(requestParameters.orderId)" result="order" />
 		<transition to="ShippingAddress" />

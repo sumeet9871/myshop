@@ -14,7 +14,7 @@
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
 <style>
  body{
-background-image:url("resources/img/bg.jpg");
+background-image:url("<c:url value='/resources/img/bg.jpg'/>");
 background-size:100%;
 } 
 

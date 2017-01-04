@@ -92,6 +92,26 @@
 		</td>
 	</tr>
 	<tr>
+		<td>
+			<form:label path="password">
+				<spring:message text="Password"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="password" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form:label path="address">
+				<spring:message text="Address"/>
+			</form:label>
+		</td>
+		<td>
+			<form:input path="address" />
+		</td>
+	</tr>
+	<tr>
 		<td colspan="2">
 			<c:if test="${!empty person.name}">
 				<input type="submit"
@@ -116,8 +136,11 @@
 		<th width="120">Email</th>
 		<th width="120">Number</th>
 		<th width="120">Role</th>
+		<th width="60">Password</th>
+		<th width="60">Address</th>
 		<th width="60">Edit</th>
 		<th width="60">Delete</th>
+		
 	</tr>
 	<c:forEach items="${listPersons}" var="person">
 		<tr>
@@ -127,6 +150,8 @@
 			<td>${person.email}</td>
 			<td>${person.number}</td>
 			<td>${person.role}</td>
+			<td>${person.password}</td>
+			<td>${person.address}</td>
 			<td><a href="<c:url value='/edit/${person.id}' />" >Edit</a></td>
 			<td><a href="<c:url value='/remove/${person.id}' />" >Delete</a></td>
 		</tr>

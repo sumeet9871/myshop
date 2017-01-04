@@ -32,7 +32,6 @@ public class Person implements Serializable {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="cartId")
 	private Cart cart;
-	
 	public Cart getCart() {
 		return cart;
 	}
