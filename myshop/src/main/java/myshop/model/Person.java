@@ -32,6 +32,16 @@ public class Person implements Serializable {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="cartId")
 	private Cart cart;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="personaddressid")
+	public ShippingAddress shippingaddress;
+	public ShippingAddress getShippingaddress() {
+		return shippingaddress;
+	}
+	public void setShippingaddress(ShippingAddress shippingaddress) {
+		this.shippingaddress = shippingaddress;
+	}
 	public Cart getCart() {
 		return cart;
 	}

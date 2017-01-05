@@ -48,7 +48,7 @@ ShippingAddressDAO shippingaddressDAO;
 public String cartInsertion(@PathVariable("productId") int productId, Principal principal, Model model) {
 	
 	Person person = personDAO.getPersonByName(principal.getName());
-	model.addAttribute("Person",person);
+	model.addAttribute("person",person);
 	Cart cart = person.getCart();
 	product product=productDAO.getProductById(productId);
 	
@@ -91,7 +91,7 @@ public ModelAndView cart(Principal principal)
 	ModelAndView model=new ModelAndView("Cart");
 	System.out.println(principal.getName());
 	Person person=personDAO.getPersonByName(principal.getName());
-	model.addObject("Person",person);
+	model.addObject("person",person);
 	Cart cart=person.getCart();
 	model.addObject("cart",cart);
 	List<Item> items=cart.getItems();
@@ -107,9 +107,15 @@ public ModelAndView cart(Principal principal)
 		 userOrder.setCart(cart);
 		
 		 Person person=cart.getPerson();
-		 model.addAttribute("Person",person);
+		 model.addAttribute("person",person);
 		 System.out.println(principal.getName());
 		 userOrder.setPerson(person);
+		/* ShippingAddress shippingaddress=new ShippingAddress();
+		 person.setShippingaddress(shippingaddress);
+		
+		 shippingaddress.setPerson(person);
+		 personDAO.updatePerson(person);
+		 shippingaddressDAO.addshippingaddress(shippingaddress);*/
 		 
 		 userOrderDAO.addOrder(userOrder);
 	
@@ -117,10 +123,11 @@ public ModelAndView cart(Principal principal)
     	 return "redirect:/checkoutFlow?orderId="+userOrder.getOrderId();
 	
 }
-	 @RequestMapping(value="/shippingaddress/add",method=RequestMethod.POST)
+	/* @RequestMapping(value="/shippingaddress/add",method=RequestMethod.POST)
 	 public String addShippingAddress(@ModelAttribute("shippingaddress") ShippingAddress shippingaddress,BindingResult result,HttpServletRequest request)
 	 {
+		 
 	 	shippingaddressDAO.addshippingaddress(shippingaddress);
 	 	return "redirect:/checkoutFlow?execution=e1s2";
-	 }
+	 }*/
 }

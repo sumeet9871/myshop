@@ -24,7 +24,7 @@ public class ShippingAddress implements Serializable {
 
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id")
-      Person person;
+       private Person person;
 
 	
 	public String getPhonenumber() {
@@ -82,4 +82,6 @@ public class ShippingAddress implements Serializable {
 	public void setPerson(Person person) {
 		this.person = person;
 	}
+
+	
 }

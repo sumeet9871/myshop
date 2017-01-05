@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow 
 	http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-    <var name="order" class="myshop.model.UserOrder" />
+   <var name="order" class="myshop.model.UserOrder" />
     <var name="shippingaddress" class="myshop.model.ShippingAddress"/>
     <action-state id="orderProcess">
          <evaluate expression="userOrderDAO.getUserOrderById(requestParameters.orderId)" result="order" />
@@ -20,17 +20,18 @@
 	</action-state>
 
 	
-	<view-state id="orderSummary" view="Confirmation.jsp">
-	<transition on="orderSummary" to="clearCart"></transition>
+	<view-state id="orderSummary" view="OrderSummary.jsp">
+	  <transition on="changeAddress" to="ShippingAddress"></transition>
+	<transition on="orderConfirmed" to="clearCart"></transition>
 	</view-state>
 	
           <action-state id="clearCart">
          <evaluate expression="itemDAO.removeAllItems(order.cart)"  />
-		<transition to="TY" />
+		<transition to="orderConfirmation" />
 	</action-state>
 
-	<view-state id="TY" view="Thankyou.jsp">
-	</view-state>
+	<end-state id="orderConfirmation" view="OrderConfirmation.jsp">
+	</end-state>
 
 	
 	

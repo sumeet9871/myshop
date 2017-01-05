@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import myshop.model.Cart;
 import myshop.model.Person;
+import myshop.model.ShippingAddress;
 
 @Repository("personDAO")
 @Transactional
@@ -28,6 +29,9 @@ public class PersonDAOImpl implements PersonDAO{
 		Cart cart=new Cart();
 		cart.setPerson(p);
 		p.setCart(cart);
+		 ShippingAddress shippingaddress= new ShippingAddress();
+		 shippingaddress.setPerson(p);
+		 p.setShippingaddress(shippingaddress);
 		session.saveOrUpdate(p);
 		
 	}
