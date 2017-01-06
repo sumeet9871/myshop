@@ -65,6 +65,7 @@
           <h1> Grand total: ${Total}</h1>
           <form:form class="form-horizontal">
           <input type="hidden" name="_flowExecutionKey">
+           <input type="submit" value="Change Address" class="btn btn-default" name="_eventId_changeAddress" />
       <input type="submit" value="Submit Order" class="btn btn-default" name="_eventId_orderConfirmed" />
       </form:form>
        </div>
