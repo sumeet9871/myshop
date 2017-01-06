@@ -15,7 +15,7 @@ public class ShippingAddress implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int personaddressid;
-
+    private String deliveryaddress;
 	private String phonenumber;
 	private String city;
 	private String district;
@@ -27,6 +27,14 @@ public class ShippingAddress implements Serializable {
        private Person person;
 
 	
+	public String getDeliveryaddress() {
+		return deliveryaddress;
+	}
+
+	public void setDeliveryaddress(String deliveryaddress) {
+		this.deliveryaddress = deliveryaddress;
+	}
+
 	public String getPhonenumber() {
 		return phonenumber;
 	}

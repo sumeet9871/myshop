@@ -23,7 +23,7 @@ background-size:100%;
 #div{
 background-image:url("resources/img/gb2.jpg");
 background-color:#FAF7F7;
-height:400px;
+height:450px;
 width:400px;
 
 }
@@ -91,12 +91,19 @@ width:400px;
 <h2 align="center">Myshop</h2>
 <form:form modelAttribute="order.cart.person" class="form-horizontal">
 <div class="form-group">
+<form:label class="control-label col-sm-2" path="shippingaddress.deliveryaddress" for="deliveryaddress">Delivery Address:</form:label>
+<div class="col-xs-10">
+<form:input class="form-control" id="deliveryaddress" path="shippingaddress.deliveryaddress" placeholder="Enter your delivery address"/>
+</div>
+</div>
+<div class="form-group">
 <form:label  class="control-label col-sm-2" path="shippingaddress.phonenumber" for="phonenumber">Number:</form:label>
 <div class="col-xs-10">
 <form:input class="form-control" id="phonenumber" path="shippingaddress.phonenumber" placeholder="Enter your number"/>
 
 </div>
 </div>
+
 <div class="form-group">
 <form:label class="control-label col-sm-2" path="shippingaddress.city" for="city">City:</form:label>
 <div class="col-xs-10">

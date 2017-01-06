@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -15,11 +14,20 @@
 
 <title>myshop</title>
 
-<div class="row">
-  <div class="col-md-6">
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="section">
+<div class="container">
+<div class="container-fluid">
+	<div class="row">
+  <div class="col-md-4">
   <h1>Shipping Address:</h1>
   <ul class="lead list-group">
       <li class="list-group-item">Name: ${order.cart.person.name}</li>
+       <li class="list-group-item">Delivery Address: ${order.cart.person.shippingaddress.deliveryaddress}</li>
       <li class="list-group-item">Number: ${order.cart.person.shippingaddress.phonenumber}</li>
       <li class="list-group-item">Address: ${order.cart.person.shippingaddress.city}</li>
       <li class="list-group-item">City: ${order.cart.person.shippingaddress.district}</li>
@@ -27,7 +35,12 @@
       
   </ul>
   </div>
-     <table class="table">
+  <div class="col-md-4">
+  
+  <br>
+  <br>
+  <br>
+<table class="table">
       <tr>
       <th>Product Name</th>
       <th>Brand</th>
@@ -50,10 +63,15 @@
           </c:forEach>
           </table>
           <h1> Grand total: ${Total}</h1>
-          <form:form>
+          <form:form class="form-horizontal">
           <input type="hidden" name="_flowExecutionKey">
-          
       <input type="submit" value="Submit Order" class="btn btn-default" name="_eventId_orderConfirmed" />
       </form:form>
-  </div>
+       </div>
+
+
+</div>
+<br>
+</div>
+</div>
 <%@ include file="footer.jsp" %>
