@@ -55,7 +55,7 @@ productDAO productDAO=new productDAOImpl();
 		
 	 }
 	 @RequestMapping("/productpage/productpage/All")
-	 public ModelAndView products1()
+	 public ModelAndView products2()
 	 {
 		List<product> products=productDAO.getAllProducts();
 	 	String productList=new Gson().toJson(products);
