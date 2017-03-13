@@ -10,7 +10,7 @@
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
 <style>
 body{
-background-image:url("<c:url value='/resources/img/bg.jpg'/>");
+background-image:url("<c:url value='/resources/img/bg4.jpg'/>");
 background-size:100%;
 } 
 
@@ -30,7 +30,7 @@ background-size:100%;
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" href="#">My Shop</a>
+<a class="navbar-brand" href="#"> <img src="<c:url value='/resources/img/logo1.png' />" alt="VE" height="34px" width="95px" border="0" class="img-rounded"></a>
 </div>
 <div class="collapse navbar-collapse" id="mynavbar">
 <ul class="nav navbar-nav">

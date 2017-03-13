@@ -150,6 +150,8 @@
 	</c:forEach>
 	</table>
 </c:if>
-</body>
-</html>
+<br>
+<br>
+<br>
+<br>
 <%@ include file="footer.jsp" %>

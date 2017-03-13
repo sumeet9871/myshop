@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
@@ -21,6 +22,7 @@ public class Person implements Serializable {
 	@NotEmpty(message="it cant be blank")
 	private String name;
 	private String lastname;
+	@Email
 	private String email;
 	@Size(min=10,max=10,message="Mobile No. has to be of 10 digits")
 	private String number;

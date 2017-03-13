@@ -17,7 +17,7 @@
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
     <style>
  body{
-background-image:url("<c:url value='/resources/img/bg.jpg'/>");
+background-image:url("<c:url value='/resources/img/bg4.jpg'/>");
 background-size:100%;
 } 
 #div{
@@ -107,6 +107,7 @@ width:440px;
     <form:label class="control-label col-sm-2" path="email" for="email">Email address:</form:label>
     <div class="col-xs-10">
     <form:input class="form-control" id="email" path="email" placeholder="Enter your email"/>
+    <form:errors path="email"/>
   </div>
   </div>
   <div class="form-group">

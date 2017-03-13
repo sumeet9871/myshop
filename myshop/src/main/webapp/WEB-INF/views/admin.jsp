@@ -22,7 +22,7 @@
 	</style>
 </head>
 <body>
-<h1>
+<h1 align="center">
 	Add a Person
 </h1>
 
@@ -32,7 +32,7 @@
 
 
 <form:form action="${addAction}" modelAttribute="person">
-<table>
+<table align="center">
 	<c:if test="${!empty person.name}">
 	<tr>
 		<td>
@@ -133,9 +133,9 @@
 </table>	
 </form:form>
 <br>
-<h3>Persons List</h3>
+<h3 align="center">Persons List</h3>
 <c:if test="${!empty listPersons}">
-	<table class="tg">
+	<table class="tg" align="center">
 	<tr>
 		<th width="80">Person ID</th>
 		<th width="120">Person Name</th>
@@ -165,6 +165,8 @@
 	</c:forEach>
 	</table>
 </c:if>
-</body>
-</html>
+<br>
+<br>
+<br>
+<br>
 <%@ include file="footer.jsp" %>

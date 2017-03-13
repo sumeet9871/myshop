@@ -54,6 +54,17 @@ productDAO productDAO=new productDAOImpl();
 	 	return model;
 		
 	 }
+	 @RequestMapping("/productpage/productpage/All")
+	 public ModelAndView products1()
+	 {
+		List<product> products=productDAO.getAllProducts();
+	 	String productList=new Gson().toJson(products);
+	 	ModelAndView model=new ModelAndView("productpage");
+	 	model.addObject("productList", productList);
+	 	return model;
+		
+	 }
+	 
 	@RequestMapping("/productsdetail/{productId}")
 	public String productsdetail(@PathVariable("productId") int productId, Model model) {
 		product products = productDAO.getProductById(productId);
@@ -82,7 +93,7 @@ public String login()
 		}
 		else{
 		personDAO.addPerson(person);
-		return "redirect:/signup";
+		return "redirect:/login";
 	}
 	}
 	@RequestMapping("/footer")

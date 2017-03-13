@@ -14,7 +14,7 @@
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
 <style>
  body{
-background-image:url("<c:url value='/resources/img/bg.jpg'/>");
+background-image:url("<c:url value='/resources/img/bg4.jpg'/>");
 background-size:100%;
 } 
 
@@ -34,7 +34,7 @@ background-size:100%;
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" href="#">My Shop</a>
+<a class="navbar-brand" href="#"> <img src="<c:url value='/resources/img/logo1.png' />" alt="VE" height="34px" width="95px" border="0" class="img-rounded"></a>
 </div>
 <div class="collapse navbar-collapse" id="mynavbar">
 <ul class="nav navbar-nav">
@@ -123,13 +123,13 @@ background-size:100%;
    <h2>Easy Payment{All Credit and Debit Cards Accepted}</h2>
    <h2>100% Payment Protection</h2>
    <h2>Customer Satisfaction</h2>
-  </div>
-  </div>
-  </div>
-<div class="container-fluid" align="right">
-<iframe width="420" height="300" src="https://www.youtube.com/embed/z4uCgicyCK8"></iframe>
+  </div>	
+   <div class="col-sm-6">
+  <br>
+<iframe align="right" width="420" height="300" src="https://www.youtube.com/embed/z4uCgicyCK8"></iframe>
 </div>
-
+</div>
+<br>
  <div class="container-fluid">
   <table width="100%">
   <tr>
