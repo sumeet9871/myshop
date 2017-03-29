@@ -22,7 +22,7 @@
 	</style>
 </head>
 <body>
-<h1>
+<h1 align="center">
 	Add a Product
 </h1>
 
@@ -32,7 +32,7 @@
 
 
 <form:form action="${addAction}" modelAttribute="product" commandName="product" enctype="multipart/form-data">
-<table>
+<table align="center">
 	<c:if test="${!empty product.productName}">
 	<tr>
 		<td>

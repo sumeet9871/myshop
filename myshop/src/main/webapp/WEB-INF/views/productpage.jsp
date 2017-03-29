@@ -33,18 +33,21 @@ angular.module("productApp",[])
     <thead>
       <tr>
         <th ng-click="sort('productId')">Product Id</th>
+        <th>Product</th>
          <th ng-click="sort('brand')">Product Brand</th>
         <th ng-click="sort('productName')">Product Name</th>
         <th ng-click="sort('price')">Price</th>
         <th ng-click="sort('category')">Category</th>
        <th ng-click="sort('description')">Description</th>
        <th>More Info</th>
+
       </tr>
     </thead>
     <tbody>
       
 	  <tr ng-repeat="product in prodData|filter:search|orderBy:sortKey:reverse">
         <td>{{product.productId}}</td>
+         <td> <img src="<c:url value='/resources/img/{{product.productId}}.jpg' />"style="width:250px; height:200px" class="img-thumbnail" alt="Picture" /></td>
          <td>{{product.brand}}</td>
         <td>{{product.productName}}</td>
         <td>{{product.price}}</td>

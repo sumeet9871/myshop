@@ -14,8 +14,9 @@
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
 <style>
  body{
-background-image:url("<c:url value='/resources/img/bg4.jpg'/>");
-background-size:100%;
+background-image:url("<c:url value='/resources/img/bg7.jpg'/>");
+background-size:cover;
+ background-repeat: no-repeat;
 } 
 
    .carousel-inner > .item > img,
